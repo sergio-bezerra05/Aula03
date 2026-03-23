@@ -1,0 +1,91 @@
+/* Contraste e Legibilidade */
+:root {
+    --cor-fundo: #f8f9fa;
+    --cor-texto: #212529;
+    --cor-primaria: #0d6efd; 
+    --cor-fundo-cabecalho: #146c43; /* Verde escurecido para garantir o contraste mínimo de 4.5:1 */
+    --cor-texto-claro: #ffffff;
+    --cor-borda: #dee2e6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    font-size: 16px; /* Tamanho mínimo legível */
+}
+
+/* Estrutura Responsiva */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header {
+    background-color: var(--cor-fundo-cabecalho);
+    color: var(--cor-texto-claro);
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+header a { color: var(--cor-texto-claro); text-decoration: underline; font-weight: bold; }
+header ul { list-style: none; padding-top: 10px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+
+main { flex: 3; min-width: 300px; }
+aside { flex: 1; min-width: 250px; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid var(--cor-borda); height: fit-content; }
+footer { width: 100%; text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid var(--cor-borda); }
+
+article, .midia-section, .form-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+}
+
+h2, h3 { color: var(--cor-fundo-cabecalho); margin-bottom: 10px; }
+
+/* Multimídia Responsiva */
+video, audio { width: 100%; max-width: 100%; margin-top: 10px; border-radius: 5px; }
+
+/* Formulários e Acessibilidade */
+fieldset { border: 1px solid var(--cor-borda); padding: 15px; border-radius: 5px; margin-bottom: 15px; }
+legend { font-weight: bold; padding: 0 5px; color: var(--cor-fundo-cabecalho); }
+
+.form-group { 
+    margin-bottom: 15px; 
+    display: flex; 
+    flex-direction: column; /* Reorganizado verticalmente */
+}
+
+label { font-weight: bold; margin-bottom: 5px; cursor: pointer; }
+input, select, textarea { padding: 10px; border: 1px solid var(--cor-borda); border-radius: 4px; font-size: 1rem; width: 100%; }
+
+button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border: none; padding: 12px 20px; font-size: 1rem;
+    border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%;
+}
+button:hover { background-color: #0b5ed7; }
+
+/* Navegação por Teclado */
+a:focus, input:focus, select:focus, textarea:focus, button:focus {
+    outline: 3px solid #ffc107; 
+    outline-offset: 2px;
+}
+
+/* Ajustes Mobile Adicionais */
+@media (max-width: 768px) {
+    .container { flex-direction: column; }
+    body { overflow-x: hidden; } /* Previne rolagem horizontal */
+}

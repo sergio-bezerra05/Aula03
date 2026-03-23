@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fut News | Sergio Bezerra Viana</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -11,8 +12,7 @@
 <header>
     <h1>Fut News</h1>
     <p>As melhores notícias de futebol estão aqui.</p>
-
-    <nav>
+    <nav aria-label="Navegação principal">
         <ul>
             <li><a href="#">Paraíba</a></li>
             <li><a href="#">Rio de Janeiro</a></li>
@@ -21,59 +21,92 @@
     </nav>
 </header>
 
-<main>
+<div class="container">
+    <main>
+        <section>
+            <h2>Futebol Brasileiro</h2>
 
-    <section>
-        <h2>Futebol Brasileiro</h2>
+            <article>
+                <h3>Futebol Paraibano</h3>
+                <p>O Botafogo-PB chega ao confronto final como dono da melhor campanha do estadual. A partida de ida será em Sousa.</p>
+            </article>
 
-        <article>
-            <h3>Futebol Paraibano</h3>
-            <p>
-                O Botafogo-PB chega ao confronto final como dono da melhor campanha do estadual.
-                Por causa disso, o Belo poderá realizar o duelo de volta em seus domínios.
-                A partida de ida será em Sousa, com o Dinossauro sendo o mandante.
-            </p>
+            <article>
+                <h3>Futebol Carioca</h3>
+                <p>O clássico terminou 0 a 0 no tempo normal. Nas penalidades, o Flamengo venceu por 5 a 4.</p>
+            </article>
 
-            <p>
-                O Sousa vai para a quarta final seguida do Campeonato Paraibano. Em 2023 foi vice
-                para o Treze, mas em 2024 e 2025 conquistou o título diante do Botafogo-PB,
-                em pleno Almeidão.
-            </p>
-        </article>
+            <article>
+                <h3>Futebol Pernambucano</h3>
+                <p>O Sport é o grande campeão do Campeonato Pernambucano de 2026. O Leão derrotou o Náutico por 3 a 0.</p>
+            </article>
+        </section>
 
-        <article>
-            <h3>Futebol Carioca</h3>
-            <p>
-                O clássico terminou 0 a 0 no tempo normal. Nas penalidades, o Flamengo venceu
-                por 5 a 4 e garantiu o sétimo tricampeonato consecutivo da história.
-            </p>
-        </article>
+        <section class="midia-section" aria-labelledby="midia-titulo">
+            <h2 id="midia-titulo">Lances da Rodada</h2>
+            <p>Assista aos melhores momentos dos campeonatos estaduais:</p>
+            <video controls aria-label="Melhores momentos da rodada">
+                <source src="Gravação de Tela 2026-03-22 183354.mp4" type="video/mp4">
+                <source src="Gravação de Tela 2026-03-22 183616.webm" type="video/webm">
+                <track src="Gravação de Tela 2026-03-22 183354.mp4" kind="subtitles" srclang="pt-br" label="Português">
+                Seu navegador não suporta a exibição de vídeos em HTML5.
+            </video>
+        </section>
 
-        <article>
-            <h3>Futebol Pernambucano</h3>
-            <p>
-                O Sport é o grande campeão do Campeonato Pernambucano de 2026.
-                O Leão derrotou o Náutico por 3 a 0 na partida de volta da final,
-                realizada no Estádio dos Aflitos, em Recife, garantindo o tetracampeonato consecutivo.
-            </p>
-        </article>
+        <section class="form-section" aria-labelledby="form-titulo">
+            <h2 id="form-titulo">Envie sua Notícia</h2>
+            <p>Viu um lance incrível? Mande pra gente!</p>
+            
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Seus Dados</legend>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required minlength="3" placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone (Somente números):</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="\d{10,11}" title="O formato deve conter apenas DDD e número (10 a 11 dígitos)" required placeholder="Ex: 83999999999">
+                    </div>
+                </fieldset>
 
-    </section>
+                <fieldset>
+                    <legend>Detalhes da Notícia</legend>
+                    <div class="form-group">
+                        <label for="estado">Estado da Notícia:</label>
+                        <select id="estado" name="estado" required>
+                            <option value="">Selecione o campeonato...</option>
+                            <option value="pb">Paraibano</option>
+                            <option value="rj">Carioca</option>
+                            <option value="pe">Pernambucano</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="arquivo">Envie uma foto ou vídeo:</label>
+                        <input type="file" id="arquivo" name="arquivo" accept="image/*, video/*" required>
+                    </div>
+                </fieldset>
 
-</main>
+                <button type="submit">Enviar para a Redação</button>
+            </form>
+        </section>
+    </main>
 
-<aside>
-    <h3>Outras Categorias</h3>
-    <ul>
-        <li><a href="#">Futebol Internacional</a></li>
-        <li><a href="#">Mercado da Bola</a></li>
-        <li><a href="#">Opinião</a></li>
-    </ul>
-</aside>
+    <aside>
+        <h3>Outras Categorias</h3>
+        <nav aria-label="Navegação secundária">
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;"><a href="#" style="color: var(--cor-primaria); text-decoration: underline;">Futebol Internacional</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: var(--cor-primaria); text-decoration: underline;">Mercado da Bola</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: var(--cor-primaria); text-decoration: underline;">Opinião</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-<footer>
-    <p>&copy; 2026 Fut News - Sergio Bezerra Viana</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 Fut News - Sergio Bezerra Viana</p>
+    </footer>
+</div>
 
 </body>
 </html>
