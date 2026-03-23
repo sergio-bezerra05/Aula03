@@ -1,9 +1,8 @@
-/* Contraste e Legibilidade */
 :root {
     --cor-fundo: #f8f9fa;
     --cor-texto: #212529;
     --cor-primaria: #0d6efd; 
-    --cor-fundo-cabecalho: #146c43; /* Verde escurecido para garantir o contraste mínimo de 4.5:1 */
+    --cor-fundo-cabecalho: #146c43; 
     --cor-texto-claro: #ffffff;
     --cor-borda: #dee2e6;
 }
@@ -15,10 +14,9 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     line-height: 1.6;
-    font-size: 16px; /* Tamanho mínimo legível */
+    font-size: 16px; 
 }
 
-/* Estrutura Responsiva */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -54,17 +52,15 @@ article, .midia-section, .form-section {
 
 h2, h3 { color: var(--cor-fundo-cabecalho); margin-bottom: 10px; }
 
-/* Multimídia Responsiva */
 video, audio { width: 100%; max-width: 100%; margin-top: 10px; border-radius: 5px; }
 
-/* Formulários e Acessibilidade */
 fieldset { border: 1px solid var(--cor-borda); padding: 15px; border-radius: 5px; margin-bottom: 15px; }
 legend { font-weight: bold; padding: 0 5px; color: var(--cor-fundo-cabecalho); }
 
 .form-group { 
     margin-bottom: 15px; 
     display: flex; 
-    flex-direction: column; /* Reorganizado verticalmente */
+    flex-direction: column; 
 }
 
 label { font-weight: bold; margin-bottom: 5px; cursor: pointer; }
@@ -78,14 +74,12 @@ button {
 }
 button:hover { background-color: #0b5ed7; }
 
-/* Navegação por Teclado */
 a:focus, input:focus, select:focus, textarea:focus, button:focus {
     outline: 3px solid #ffc107; 
     outline-offset: 2px;
 }
 
-/* Ajustes Mobile Adicionais */
 @media (max-width: 768px) {
     .container { flex-direction: column; }
-    body { overflow-x: hidden; } /* Previne rolagem horizontal */
+    body { overflow-x: hidden; } 
 }
